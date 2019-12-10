@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>カラーコード早わかりコーナー</title>
+        <style>
+            *{margin: 0px; padding: 0px;}
+            h1{
+                text-align: center;
+                margin: 0px auto;
+                margin-top: 100px;
+                width: 600px;
+                border-bottom: dotted 10px #ff8040;
+            }            
+            p{
+                text-align: center;
+                margin: 0px auto;
+                margin-top: 50px;
+            }
+            #box1{
+                margin: 20px auto;
+                text-align: center;
+            }
+            #box2{
+                border: 1px solid gray;
+                width: 200px;
+                height: 200px;
+                margin: 10px auto;
+                text-align: center;
+                line-height: 50px;
+                transition: all 1s linear;
+            }
+            #output2{
+                color: #ffffff;
+                margin: 0px;
+            }
+    </style>
+
+    </head>
+    <body>
+        <h1>カラーコード早わかりコーナー</h1>
+        <p>直感的に色指定したい、そんなあなたにこのコーナー。<br>
+            ★入力した色のカラーコードを表示します<br>☆可視性を高めるため2色で表示しています</p>
+        <div id = "box1">
+            <input type="color" id="input1">
+            <button onclick="btn1();">コードを見る</button>
+        </div>
+        <div id = "box2">
+            <p id="output1">color</p>
+            <p id="output2">color</p>
+        </div>
+        <p id = "output3"></p>
+        <script>
+            //要素の取得
+            const INPUT1=document.getElementById("input1");
+            const OUTPUT1=document.getElementById("output1");
+            const OUTPUT2=document.getElementById("output2");
+            const OUTPUT3=document.getElementById("output3");
+            const BOX2 = document.getElementById("box2");
+
+            function btn1(){
+                OUTPUT1.innerHTML=INPUT1.value;
+                OUTPUT2.innerHTML=INPUT1.value;
+                OUTPUT3.innerHTML="コピペ用表示:"+INPUT1.value;
+                BOX2.style.backgroundColor = INPUT1.value;
+            }
+        </script>
+    </body>
+</html>
